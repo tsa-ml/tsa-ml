@@ -105,7 +105,7 @@ $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?
 
 ### Research Question on Occupation 
 
-[Tutorial and Use Case using Occupation Data](./Research%20Questions%20-%20Use%20Cases.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+[Tutorials using Occupation Data](./Research%20Questions%20-%20Use%20Cases.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
 
 ## Contact
 
