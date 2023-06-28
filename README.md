@@ -1,6 +1,6 @@
 # TSA-ML
 
-TSA-ML is a data pipeline that integrates survey data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in  the region. More information about this work is on the [official website](http://#).
+TSA-ML is a data pipeline that integrates survey data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in  the region. More information about this work is on the [official website](http://tsa-ml.s3-website-ap-southeast-1.amazonaws.com/index.html).
 
 ---
 
@@ -26,6 +26,8 @@ Below is a list of the datasets currently used in the system.
 | Macao | World Values Survey (WVS) | Faculty of Social Sciences, Avenida da Universidade | Social surveys conducted in 2019 | [Link](https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp)
 | China |  World Values Survey (WVS) | Public Opinion Research Center of School of International and Public Affairs at Shanghai Jiao Tong University | Social surveys conducted in 2018, 2013, 2007, 2001, 1995, and 1990 | [Link](https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp)
 
+Please contact us if you want to contribute a dataset. Refer to the below details.
+
 ## Quick Start
 
 ### Requirements and Installation
@@ -42,7 +44,7 @@ Need to install the following in your environment:
 This repository contains the following:
 
 * JSON-LD ingestion files for graph database (`./ingestion/`).
-* Landing web page.
+* Landing web page for this work.
 * Python script for loading JSON-LD ingestion files (`ingest_json.py`).
 * Jupyter notes containing tutorials and use cases (`.ipynb` files).
 
@@ -79,17 +81,17 @@ $ docker stop agraph
 
 Graph database can ingest TSA-ML data in various ways. Data files can be manually moved or copy into the directory which contains the AllegroGraph installation on a local or remote machine. If the copy of the directory contains the data files of a specific data repository, then it can be copied and paste from the command prompt. Go into Docker then under `Containers` > `agraph` > `Files`. Under the `agraph` folder in the file explorer, drill down to `data` > `rootcatalog` > [database repository name]. This directory contains all of the TSA-ML files and subfolders. All contents of can be managed using the file explorer in Docker app. 
 
-Data can also be ingested using the python script via command prompt. Note, in the `inguest_json.py`, a string variable called `pwd_ingest` can be set to the directory which contains the json files, in this case, it is `./ingestion`.
+Data can also be ingested using the python script via command prompt. Note, in the `ingest_json.py`, a string variable called `pwd_ingest` can be set to the directory which contains the json files, in this case, it is `./ingestion`.
 
 ```
-$ python3 ./inguest_json.py
+$ python3 ./ingest_json.py
 ```
 
 Data processing can take some time, as there are 2,395,151 statements. If the script is running on a local machine, it may stall or interrupt occasionally. In this instance, re-run the script using the above command.
 
 ### Testing data
 
-The curl command accesses the endpoint which will return all triples in the graph database. 
+The curl command accesses the endpoint which will return all triples in the graph database. Enter the details of your service between sqaure brackets.
 
 ```
 $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?p ?o . }"
@@ -103,7 +105,7 @@ $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?
 
 ### Research Question on Occupation 
 
-[Tutorial and Use Case using Occupation Data](./Research%20Questions%20-%20Use%20Cases.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's occupation. This tutorial demonstrates the use of different SPARQL queriesm, machine learning, and AI using Python. 
+[Tutorial and Use Case using Occupation Data](./Research%20Questions%20-%20Use%20Cases.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
 
 ## Contact
 
@@ -111,6 +113,4 @@ Please email your questions or comments to (d01520417@gmail.com).
 
 ## Contributing
 
-Thanks for your interest in contributing! There are many ways to get involved;
-start by sending us an email to email address listed above or access more information on 
-our [official website](http://#).
+Thanks for your interest in contributing! There are many ways to get involved; start by sending us an email to email address listed above or access more information on our [official website](http://tsa-ml.s3-website-ap-southeast-1.amazonaws.com/index.html).
