@@ -79,7 +79,7 @@ $ docker stop agraph
 
 ### Uploading the data in the graph database
 
-Graph database can ingest TSA-ML data in various ways. Data files can be manually moved or copy into the directory which contains the AllegroGraph installation on a local or remote machine. If the copy of the directory contains the data files of a specific data repository, then it can be copied and paste from the command prompt. Go into Docker then under `Containers` > `agraph` > `Files`. Under the `agraph` folder in the file explorer, drill down to `data` > `rootcatalog` > [database repository name]. This directory contains all of the TSA-ML files and subfolders. All contents of can be managed using the file explorer in Docker app. 
+Graph database can ingest TSA-ML data in various ways. Data files can be manually moved or copy into the directory which contains the AllegroGraph installation on a local or remote machine. If a copy of the directory contains the data files of a specific data repository, then it can be copied and paste from the command prompt. Go into Docker then under `Containers` > `agraph` > `Files`. Under the `agraph` folder in the file explorer, drill down to `data` > `rootcatalog` > [database repository name]. This directory contains all of the TSA-ML files and subfolders. All contents of can be managed using the file explorer in Docker app. 
 
 Data can also be ingested using the python script via command prompt. Note, in the `ingest_json.py`, a string variable called `pwd_ingest` can be set to the directory which contains the json files, in this case, it is `./ingestion`.
 
