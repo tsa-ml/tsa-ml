@@ -1,6 +1,6 @@
 # TSA-ML
 
-TSA-ML is a data pipeline that integrates survey data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in  the region. More information about this work is on the [official website](http://tsa-ml.s3-website-ap-southeast-1.amazonaws.com/index.html).
+TSA-ML is a data pipeline that integrates survey data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in  the region. More information about this work is on the [official website](https://www.tsa-ml.org).
 
 ---
 
@@ -103,9 +103,13 @@ $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?
 
 [SPARQL Queries](./SPARQL%20Queries%20-%20Use%20Cases.ipynb) tutorials and use cases demostrates different SPARQL queries which addresses research questions using the TSA-ML data platform. 
 
-### Research Question on Occupation 
+### Data Profiling 
 
-[Tutorials using Occupation Data](./Research%20Questions%20-%20Use%20Cases.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+### Occupation 
+
+[Tutorials using Time Series on Occupation Data](./Use%20Cases%20-%20Occupation.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+
+[Tutorials using Bivariate Analysis on Age and Occupation ](./Use%20Cases%20-%20Age%20and%20Occupation.ipynb) demostrates how TSA-ML can be used to perform a bivariate anlysis on the population's age and occupation. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
 
 ## Contact
 
@@ -113,4 +117,4 @@ Please email your questions or comments to (d01520417@gmail.com).
 
 ## Contributing
 
-Thanks for your interest in contributing! There are many ways to get involved; start by sending us an email to email address listed above or access more information on our [official website](http://tsa-ml.s3-website-ap-southeast-1.amazonaws.com/index.html).
+Thanks for your interest in contributing! There are many ways to get involved; start by sending us an email to email address listed above or access more information on our [official website](https://www.tsa-ml.org).
