@@ -2,6 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Data Platform to integrate Survey Data" />
         <meta name="author" content="Brendan Loo Gee" />
@@ -56,6 +59,14 @@
          </style>
     </head>
     <body>
+        <script>
+            function openTSCS() {
+                window.open("https://www2.ios.sinica.edu.tw/sc/en/home2.php", "_blank");
+            }
+            function openWVS() {
+                window.open("https://www.worldvaluessurvey.org/wvs.jsp", "_blank");
+            }
+        </script>
         <!-- The Modal -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
@@ -68,14 +79,14 @@
                               data on different social topics such as employment, family, and social networks. 
                               The TSCS contains data from the 1980's from individuals and families across Taiwan. 
                               This asset is managed by the Center for Survey Research, Academia Sinica, Taiwan. 
-                              More detail information is available <a href="https://www2.ios.sinica.edu.tw/sc/en/home2.php">here</a>.
+                              More detail information is available <a href="#!" onclick="openTSCS();">here</a>.
                     </p>
                     <p class="lead mb-3">
                         <u><i>World Values Survey (WVS)</i></u> has a collection of survey datasets of social and economic indicators of individuals.
                               It contains deidentified data from the 1980s of different countries including 
                               those of East-Asia, America, and Europe. The TSA-ML platform currently contains data from Hong Kong, Macao, Taiwan, and China. 
                               A network of researchers from different countries have rigiously sampled the population and collected representative 
-                              information of individuals and families. More detail information is available <a href="https://www.worldvaluessurvey.org/wvs.jsp">here</a>.
+                              information of individuals and families. More detail information is available <a href="#!" onclick="openWVS();">here</a>.
                     </p>
             </div>
             </div>
@@ -93,12 +104,6 @@
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
                     modal.style.display = "none";
-                }
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
                 }
             }
         </script>
@@ -118,22 +123,6 @@
                             <!-- Page heading-->
                             <h1 class="mb-5"><u><i>TSA-ML</i></u> is a data pipeline that integrates survey data from diverse sources.</h1>
                         </div>
-                    </div>
-                    <!-- Signup
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <form class="form-subscribe" id="contactForm" method="POST" action="index.html" >
-                                <div class="row">
-                                    <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
-                                    </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
-                                </div>
-                            </form>
-                        </div>
-                    -->
                     </div>
                 </div>
             </div>
@@ -166,6 +155,11 @@
                 </div>
             </div>
         </section>
+        <script>
+            function openGitHub() {
+                window.open("https://github.com/tsa-ml/tsa-ml", "_blank");
+            }
+        </script>
         <!-- Image Showcases-->
         <section class="showcase">
             <div class="container-fluid p-0">
@@ -174,7 +168,7 @@
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h2>Regional Data at Scale</h2>
                         <p class="lead mb-0">
-                            Current data focuses on East-Asian region (predominately, Hong Kong, Macau, Taiwan and China). Other datasets from neighbouring regions are welcome. A list of public data assets are listed <a href="index.html#!" id="myLink" onclick="openListOfSources();">here</a>. Other groups can contribute to this repository.</p>
+                            Current data focuses on East-Asian region (predominately, Hong Kong, Macau, Taiwan and China). Other datasets from neighbouring regions are welcome. A list of public data assets are listed <a href="#!" id="myLink" onclick="openListOfSources();">here</a>. Other groups can contribute to this repository.</p>
                     </div>
                 </div>
                 <div class="row g-0">
@@ -182,7 +176,7 @@
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>Machine Learning and AI</h2>
                         <p class="lead mb-0">
-                            Different aspects of the system uses machine learning and AI, including Natural Language Processing (NLP), which integrates different survey data. The system leverage's graph databases which links data sources to allow analysis and pre-training. A Github of resources, assets, and tutorials can be access <a href="https://github.com/tsa-ml/tsa-ml">here</a>.  
+                            Different aspects of the system uses machine learning and AI, including Natural Language Processing (NLP), which integrates different survey data. The system leverage's graph databases which links data sources to allow analysis and pre-training. A Github of resources, assets, and tutorials can be access <a href="#!" onclick="openGitHub();">here</a>.  
                         </p>
                     </div>
                 </div>
@@ -211,7 +205,7 @@
             <div class="container">
                 <h2 class="mb-5">Your contributions are welcome...</h2>
                 <p class="lead mb-3">
-                    Others are welcome to contribute. Please email your enquires to us. Instructions to setup the graph database containing the survey data is available in the <a href="https://github.com/tsa-ml/tsa-ml">Github</a> repository. Tutorials are also available. The resource contains python scripts demostrating how data can be utilised.
+                    Others are welcome to contribute. Please email your enquires to us. Instructions to setup the graph database containing the survey data is available in the <a href="#!" onclick="openGitHub();">Github</a> repository. Tutorials are also available. The resource contains python scripts demostrating how data can be utilised.
                 </p>
             </div>
         </section>
@@ -221,18 +215,6 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <h2 class="mb-4">Want to know more? Contact Us! <a href='mailto: d01520417@gmail.com'><i class="bi-mailbox text-white"></i></a></h2>
-                        <!-- Signup
-                        <form class="form-subscribe" id="contactFormFooter" method="POST" action="index.html">
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
-                            </div>
-                        </form>
-                        -->
                     </div>
                 </div>
             </div>
@@ -242,19 +224,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; TSA-ML 2023. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
+                            <li class="list-inline-item me-4"> </li>
+                            <li class="list-inline-item me-4"></li>
+                            <li class="list-inline-item"></li>
                         </ul>
                     </div>
                 </div>
