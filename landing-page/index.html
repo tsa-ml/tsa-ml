@@ -159,6 +159,12 @@
             function openGitHub() {
                 window.open("https://github.com/tsa-ml/tsa-ml", "_blank");
             }
+            function openTutorialTimeSeries() {
+                window.open("https://github.com/tsa-ml/tsa-ml/blob/main/Use%20Cases%20-%20Occupation%20Timeseries.ipynb", "_blank");
+            }
+            function openTutorialBivariate() {
+                window.open("https://github.com/tsa-ml/tsa-ml/blob/main/Use%20Cases%20-%20Age%20and%20Occupation.ipynb", "_blank");
+            }
         </script>
         <!-- Image Showcases-->
         <section class="showcase">
@@ -197,6 +203,36 @@
                 <div class="row">
                     <h1 class="mb-5"><br><br>TSA-ML Schema</h1>
                     <iframe height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRuUgysVr1mb02JS56lZdwXH7Q5UERnF99f7gI-8aB4WFShth0RG2aAVZXBl85ddQ/pubhtml?gid=113472750&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                </div>
+            </div>
+        </section>
+        <!-- Tutorials-->
+        <section class="tutorial text-left">
+            <div class="container-fluid p-5">
+                <div class="row g-3">
+                    <div class="col-lg-6 order-lg-2">
+                        <center><img width="650" height="400" src="./assets/img/occupation1.png"/></center>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h3>Time Series</h3>
+                        <p class="lead mb-auto">
+                            Time Series analysis can be conducted to understand trends in occupation held by individuals across time. 
+                            Cluster algorithms with Natural Language Processing (NLP) can be applied to understand patterns in different datasets on a domain, 
+                            such as occupation titles held by individuals in the dataset. Tutorials can be access <a href="#!" onclick="openTutorialTimeSeries();">here</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-lg-6 order-lg-2">
+                        <center><br><img width="650" height="520" src="./assets/img/occupation4.png"/></center>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h3>Bivariate Analysis</h3>
+                        <p class="lead mb-auto">
+                            Bivariate analysis can be used to examine the relationship between age and occupation of individuals. 
+                            Tutorials can be access <a href="#!" onclick="openTutorialBivariate();">here</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
