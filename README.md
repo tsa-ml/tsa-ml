@@ -107,9 +107,9 @@ $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?
 
 ### Occupation 
 
-[Tutorials using Time Series on Occupation Data](Use%20Cases%20-%20Occupation%20Timeseries.ipynb) demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+Tutorials using Time Series on Occupation Data demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
 
-[Tutorials using Bivariate Analysis on Age and Occupation ](./Use%20Cases%20-%20Age%20and%20Occupation.ipynb) demostrates how TSA-ML can be used to perform a bivariate anlysis on the population's age and occupation. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+Tutorials using Bivariate Analysis on Age and Occupation  demostrates how TSA-ML can be used to perform a bivariate anlysis on the population's age and occupation. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
 
 ## Contact
 
