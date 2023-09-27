@@ -101,7 +101,7 @@ $ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?
 
 ### SPARQL 
 
-[SPARQL Queries](./SPARQL%20Queries%20-%20Use%20Cases.ipynb) tutorials and use cases demostrates different SPARQL queries which addresses research questions using the TSA-ML data platform. 
+SPARQL Queries tutorials and use cases demostrates different SPARQL queries which addresses research questions using the TSA-ML data platform. 
 
 ### Data Profiling 
 
