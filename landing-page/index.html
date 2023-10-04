@@ -2,24 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Data Platform to integrate Survey Data" />
         <meta name="author" content="Brendan Loo Gee" />
-        <title>TSA-ML - Data Platform Survey Platform</title>
+        <title>TSA-ML - Data Platform For Consumer Research</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
             body {
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Trebuchet MS', sans-serif;
             }
             /* The Modal (background) */
             .modal {
@@ -58,7 +57,7 @@
             }
          </style>
     </head>
-    <body>
+    <body id="page-top">
         <script>
             function openTSCS() {
                 window.open("https://www2.ios.sinica.edu.tw/sc/en/home2.php", "_blank");
@@ -71,24 +70,24 @@
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="container">
-                <h2 class="mb-5">Current datasets on TSA-ML platform</h2>
-                    <p class="lead mb-3">
-                        <u><i>Taiwan Social Change Survey (TSCS)</i></u> is a longitutindal dataset containing survey 
-                              data on different social topics such as employment, family, and social networks. 
-                              The TSCS contains data from the 1980's from individuals and families across Taiwan. 
-                              This asset is managed by the Center for Survey Research, Academia Sinica, Taiwan. 
-                              More detail information is available <a href="#!" onclick="openTSCS();">here</a>.
-                    </p>
-                    <p class="lead mb-3">
-                        <u><i>World Values Survey (WVS)</i></u> has a collection of survey datasets of social and economic indicators of individuals.
-                              It contains deidentified data from the 1980s of different countries including 
-                              those of East-Asia, America, and Europe. The TSA-ML platform currently contains data from Hong Kong, Macao, Taiwan, and China. 
-                              A network of researchers from different countries have rigiously sampled the population and collected representative 
-                              information of individuals and families. More detail information is available <a href="#!" onclick="openWVS();">here</a>.
-                    </p>
-            </div>
+                <span class="close">&times;</span>
+                <div class="container">
+                    <h2 class="mb-5">Current datasets on TSA-ML platform</h2>
+                        <p class="lead mb-3">
+                            <u><i>Taiwan Social Change Survey (TSCS)</i></u> is a longitutindal dataset containing survey 
+                                data on different social topics such as employment, family, and social networks. 
+                                The TSCS contains data from the 1980's from individuals and families across Taiwan. 
+                                This asset is managed by the Center for Survey Research, Academia Sinica, Taiwan. 
+                                More detail information is available <a href="#!" onclick="openTSCS();">here</a>.
+                        </p>
+                        <p class="lead mb-3">
+                            <u><i>World Values Survey (WVS)</i></u> has a collection of survey datasets of social and economic indicators of individuals.
+                                It contains deidentified data from the 1980s of different countries including 
+                                those of East-Asia, America, and Europe. The TSA-ML platform currently contains data from Hong Kong, Macao, Taiwan, and China. 
+                                A network of researchers from different countries have rigiously sampled the population and collected representative 
+                                information of individuals and families. More detail information is available <a href="#!" onclick="openWVS();">here</a>.
+                        </p>
+                </div>
             </div>
         </div>
         <script>
@@ -101,6 +100,7 @@
                 var span = document.getElementsByClassName("close")[0];
                 // open the modal 
                 modal.style.display = "block";
+                window.scrollTo(0, 0);
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
                     modal.style.display = "none";
@@ -108,49 +108,60 @@
             }
         </script>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#!">TSA-ML</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
-            </div>
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="#about">About</a></li>
+                <li class="sidebar-nav-item"><a href="#features">Features</a></li>
+                <li class="sidebar-nav-item"><a href="#schema">Schema</a></li>
+                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
+                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5"><u><i>TSA-ML</i></u> is a data pipeline that integrates survey data from diverse sources.</h1>
-                        </div>
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-3 px-lg-5 text-center">
+                <h1 class="mb-1">TSA-ML</h1>
+                <h3 class="mb-5"><em>An AI-based platform that integrates consumer data from diverse sources</em></h3>
+                <iframe src="https://drive.google.com/file/d/1v_kqStVu6hJee7UOscMdRLgSX_u7eztS/preview" width="600" height="400" allow="autoplay"></iframe>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h3>TSA-ML is a sophisticated data science platform for consumer market research</h3><br>
+                        <p class="lead mb-5">
+                            Our platform extract, transform, clean, and link consumer data from diverse campaigns and sources into a single Knowledge Graph using W3C standards. The platform is ideal in connecting your organisation's customer data together and to perform advance market research analytics, machine learning, and AI.
+                        </p>
+                        <a class="btn btn-dark btn-xl" href="#features">What Our Platform Offer</a>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-bar-chart-steps m-auto text-primary"></i></div>
-                            <h3>Microeconomic Data</h3>
-                            <p class="lead mb-0">Granularity of data is at the level of the individual allowing powerful analysis and predictions</p>
-                        </div>
+        </section>
+        <!-- Services-->
+        <section class="content-section bg-primary text-white text-center" id="features">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">Features</h3>
+                    <h2 class="mb-5">What Our Platform Offer</h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-people"></i></span>
+                        <h4><strong>Consumer Data</strong></h4>
+                        <p class="text-faded mb-0">Granularity of data is at the level of the consumer allowing powerful analysis and predictions</p>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-gear-wide-connected m-auto text-primary"></i></div>
-                            <h3>Interconnected Data</h3>
-                            <p class="lead mb-0">Built on Resource Description Framework (RDF) and SPARQL Web 3 standards and Graph Database</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-grid"></i></span>
+                        <h4><strong>Interconnected Data</strong></h4>
+                        <p class="text-faded mb-0">Built on Resource Description Framework (RDF) and SPARQL Web 3 standards and Graph Database</p>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-tools m-auto text-primary"></i></div>
-                            <h3>Automated Crosswalk Analysis</h3>
-                            <p class="lead mb-0">Natural Language Processing (NLP) and AI has been used to automate the crosswalk analysis of target survey questions</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-link"></i></span>
+                        <h4><strong>Automated Crosswalk Analysis</strong></h4>
+                        <p class="text-faded mb-0">Natural Language Processing (NLP) and AI has been used to automatically link target survey questions</p>
                     </div>
                 </div>
             </div>
@@ -166,116 +177,158 @@
                 window.open("https://github.com/tsa-ml/tsa-ml/blob/main/Use%20Cases%20-%20Age%20and%20Occupation.ipynb", "_blank");
             }
         </script>
-        <!-- Image Showcases-->
-        <section class="showcase">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Regional Data at Scale</h2>
-                        <p class="lead mb-0">
-                            Current data focuses on East-Asian region (predominately, Hong Kong, Macau, Taiwan and China). Other datasets from neighbouring regions are welcome. A list of public data assets are listed <a href="#!" id="myLink" onclick="openListOfSources();">here</a>. Other groups can contribute to this repository.</p>
+        <!-- Highlights-->
+        <section class="content-section" id="highlights">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!" id="myLink" onclick="openListOfSources();">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Regional Data at Scale</div>
+                                    <p class="mb-0">
+                                        A list of public data assets focused in East-Asian region.
+                                    </p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                        </a>
                     </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                    <div class="col-lg-6 my-auto showcase-text">
-                        <h2>Machine Learning and AI</h2>
-                        <p class="lead mb-0">
-                            Different aspects of the system uses machine learning and AI, including Natural Language Processing (NLP), which integrates different survey data. The system leverage's graph databases which links data sources to allow analysis and pre-training. A Github of resources, assets, and tutorials can be access <a href="#!" onclick="openGitHub();">here</a>.  
-                        </p>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Machine Learning and AI</div>
+                                    <p class="mb-0">
+                                        Leveraging graph databases, machine learning, and AI, including Natural Language Processing (NLP).
+                                    </p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-2.jpg" alt="..." />
+                        </a>
                     </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2>Supported by Research</h2>
-                        <p class="lead mb-0">
-                            Based on previous research in AI, several key demographic targets from the meta-data of public datasets were screened. 700+ variables were manually screened from 70+ datasets which contained demographic and socioeconomic survey questions. Research can be access <a href="./doc/doc_2.pdf">here</a>. 
-                        </p>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="./doc/doc_2.pdf">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Supported by Research</div>
+                                    <p class="mb-0">
+                                        700+ variables from 70+ public datasets were manually screened to support the development of the technology.
+                                    </p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-3.jpg" alt="..." "/>
+                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- Crosswalk Analysis-->
-        <section class="crosswalk text-center bg-light">
-            <div class="container">
-                <div class="row">
-                    <h1 class="mb-5"><br><br>TSA-ML Schema</h1>
-                    <iframe height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRuUgysVr1mb02JS56lZdwXH7Q5UERnF99f7gI-8aB4WFShth0RG2aAVZXBl85ddQ/pubhtml?gid=113472750&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-                </div>
-            </div>
-        </section>
-        <!-- Tutorials-->
-        <section class="tutorial text-left">
-            <div class="container-fluid p-5">
-                <div class="row g-3">
-                    <div class="col-lg-6 order-lg-2">
-                        <center><img width="650" height="400" src="./assets/img/occupation1.png"/></center>
-                    </div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h3>Time Series</h3>
-                        <p class="lead mb-auto">
-                            Time Series analysis can be conducted to understand trends in occupation held by individuals across time. 
-                            Cluster algorithms with Natural Language Processing (NLP) can be applied to understand patterns in different 
-                            datasets on occupation titles held by individuals in the dataset. Tutorials can be access <a href="#!" onclick="openTutorialTimeSeries();">here</a>.
-                        </p>
-                    </div>
-                </div>
-                <div class="row g-3">
-                    <div class="col-lg-6 order-lg-2">
-                        <center><br><img width="650" height="520" src="./assets/img/occupation4.png"/></center>
-                    </div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h3>Bivariate Analysis</h3>
-                        <p class="lead mb-auto">
-                            Bivariate analysis can be used to examine the relationship between age and occupation of individuals. 
-                            Tutorials can be access <a href="#!" onclick="openTutorialBivariate();">here</a>.
-                        </p>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!" onclick="openGitHub();">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Github Repository</div>
+                                    <p class="mb-0">
+                                        A Github of resources, assets, and tutorials.
+                                    </p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio-4.jpg" alt="..." />
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Testimonials-->
-        <section class="testimonials text-center bg-light">
-            <div class="container">
-                <h2 class="mb-5">Your contributions are welcome...</h2>
-                <p class="lead mb-3">
-                    Others are welcome to contribute. Please email your enquires to us. Instructions to setup the graph database containing the survey data is available in the <a href="#!" onclick="openGitHub();">Github</a> repository. Tutorials are also available. The resource contains python scripts demostrating how data can be utilised.
-                </p>
+        <!-- Callout-->
+        <section class="callout" id="schema">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mx-auto mb-5">TSA-ML Schema</h2>
+                <img src="assets/img/schema.png" width="900" height="500"/>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <section class="content-section text-center" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">Portfolio</h3>
+                    <h2 class="mb-5">Case Study</h2>
+                </div>
+                <div class="row gx-4">
+                    <!-- Page Content -->
+                    <div class="container">
+                        <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation1.png" alt="" width="500" height="370" />
+                            </div>
+                            <div class="col-md-5 showcase-text">
+                                <h3>Time Series Analysis</h3>
+                                <p>Time Series analysis can be conducted to understand trends in occupation held by individuals across time.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                        <!-- Project Two -->
+                        <div class="row">
+                            <div class="col-md-7 showcase-text">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation2.png" alt="" width="500" height="370"  />
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Cluster Analysis</h3>
+                                <p>Cluster algorithms with Natural Language Processing (NLP) can be applied to understand patterns in different datasets on occupation titles held by individuals in the dataset.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                        <!-- Project Three -->
+                        <div class="row">
+                            <div class="col-md-7 showcase-text">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation3.png" alt="" width="500" height="370"  />
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Word Visualisation</h3>
+                                <p>Word visualisation can be used to understand textual features of occupation titles held by consumers in the population.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                        <!-- Project Four -->
+                        <div class="row">
+                            <div class="col-md-7 showcase-text">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation4.png" alt="" width="500" height="370"  />
+                            </div>
+                            <div class="col-md-5">
+                                <h3>Bivariate Analysis</h3>
+                                <p>Bivariate analysis can be used to examine the relationship between age and occupation of individuals.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                    </div>
+                    <!-- /.container -->
+                </div>
             </div>
         </section>
         <!-- Call to Action-->
-        <section class="call-to-action text-white text-center" id="signup">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Want to know more? Contact Us! <a href='mailto: d01520417@gmail.com'><i class="bi-mailbox text-white"></i></a></h2>
-                    </div>
-                </div>
+        <section class="content-section bg-primary text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Want to know more? Please email your enquires to us!</h2>
+                <a class="btn btn-xl btn-light me-4" href="mailto:d01520417@gmail.com">Contact Us!</a>
             </div>
         </section>
+        <!-- Map-->
+        <div class="map" id="contact">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14768.068653454558!2d114.16370314791914!3d22.277339675246324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404005b7e61fe79%3A0x242571e635c3d8ee!2sWan%20Chai!5e0!3m2!1sen!2shk!4v1696442753530!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <br />
+        </div>
         <!-- Footer-->
-        <footer class="footer bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; TSA-ML 2023. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4"> </li>
-                            <li class="list-inline-item me-4"></li>
-                            <li class="list-inline-item"></li>
-                        </ul>
-                    </div>
-                </div>
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <p class="text-muted small mb-0">Copyright &copy; TSA-ML 2023. All Rights Reserved</p>
             </div>
         </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
