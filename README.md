@@ -1,6 +1,6 @@
 # TSA-ML
 
-TSA-ML is a data pipeline that integrates survey data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in  the region. More information about this work is on the [official website](https://www.tsa-ml.org).
+TSA-ML is a data platform that integrates consumer data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in the region. More information about this work is on the [official website](https://www.tsa-ml.org).
 
 ---
 
@@ -8,7 +8,7 @@ TSA-ML is a data pipeline that integrates survey data from diverse sources. This
 
 TSA-ML is a data pipeline that...
 
-* **Transforms and ingest** microeconomic data from surveys drawn from diverse sources, mainly in the East-Asia region. It provides granular data at the level of the individual which allows powerful analytics and predictions.
+* **Transforms and ingest** consumer data from surveys drawn from diverse sources, mainly in the East-Asia region. It provides granular data at the level of the individual which allows powerful analytics and predictions.
 
 * **Links** different sources using Resource Description Framework (RDF) and SPARQL W3C standards. Data is stored in a graph database, and data is interconnected using the Schema.org vocabulary.
 
@@ -36,8 +36,7 @@ Need to install the following in your environment:
 
 * Python 3.9.6
 * R version 4.2.3
-* Docker 4.19.0
-* AllegroGraph 7
+* GraphDB 10.3.1
 
 ### What is in this repository?
 
@@ -46,7 +45,6 @@ This repository contains the following:
 * JSON-LD ingestion files for graph database (`./ingestion/`).
 * Landing web page for this work.
 * Python script for loading JSON-LD ingestion files (`ingest_json.py`).
-* Jupyter notes containing tutorials and use cases (`.ipynb` files).
 
 ### Setup graph database
 
@@ -57,46 +55,122 @@ $ python3 -m venv tsaml
 $ source tsaml/bin/activate
 ```
 
-Install python libraries for AllegroGraph database. 
+Start up GraphDB database instance.
 
 ```
-$ pip3 install agraph-python
+$ sudo systemctl daemon-reload
+$ sudo systemctl start graphdb
 ```
 
-Start up AllegroGraph database instance using Docker.
+To stop and restart GraphDB database instance.
 
 ```
-$ docker start agraph
-```
-
-To stop AllgegroGraph database instance using Docker.
-
-```
-$ docker stop agraph
+$ sudo systemctl stop graphdb
+$ sudo systemctl restart graphdb
+$ sudo systemctl status graphdb
+$ sudo systemctl enable graphdb
+$ journalctl -u graphdb
 ```
 
 ## Data Ingestion
 
 ### Uploading the data in the graph database
 
-Graph database can ingest TSA-ML data in various ways. Data files can be manually moved or copy into the directory which contains the AllegroGraph installation on a local or remote machine. If a copy of the directory contains the data files of a specific data repository, then it can be copied and paste from the command prompt. Go into Docker then under `Containers` > `agraph` > `Files`. Under the `agraph` folder in the file explorer, drill down to `data` > `rootcatalog` > [database repository name]. This directory contains all of the TSA-ML files and subfolders. All contents of can be managed using the file explorer in Docker app. 
-
-Data can also be ingested using the python script via command prompt. Note, in the `ingest_json.py`, a string variable called `pwd_ingest` can be set to the directory which contains the json files, in this case, it is `./ingestion`.
+Graph database can ingest TSA-ML data using a custom developed shell script. Data files for ingestion are located in a directory on the local or remote machine which also contains the GraphDB installation and instance. A GraphDB repository needs to be setup under the name `tsa-ml`, including all of the necessary schema.org namespaces. A directory needs to be setup on the local or remote machine. This directory contains all of the JSON data files.
 
 ```
-$ python3 ./ingest_json.py
+$ sudo mkdir ~/tsaml_graphdb_ingest
+$ sudo chown -R graphdbuser ~/tsaml_graphdb_ingest/
+$ sudo chgrp graphdbuser ~/tsaml_graphdb_ingest/
 ```
 
-Data processing can take some time, as there are 2,395,151 statements. If the script is running on a local machine, it may stall or interrupt occasionally. In this instance, re-run the script using the above command.
+Before executing the endpoint for ingesting JSON data files into GraphDB, need to change the `$JAVA` environmental variable in `/Applications/GraphDB Desktop.app/Contents/app/bin/setvars.in.sh` to include the following line `JAVA="/Applications/GraphDB Desktop.app/Contents/runtime/Contents/Home/bin/java"`. Copy `ingest_json_graphdb.sh` and `tsal-ml-config.ttl` file to Home directory of remote and local machine to execute `importrdf`. Below is a copy of the GraphDB configuration file (.ttl).
+
+```
+#
+# RDF4J configuration template for a GraphDB repository
+#
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rep: <http://www.openrdf.org/config/repository#>.
+@prefix sr: <http://www.openrdf.org/config/repository/sail#>.
+@prefix sail: <http://www.openrdf.org/config/sail#>.
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#>.
+
+[] a rep:Repository ;
+    rep:repositoryID "tsa-ml" ;
+    rdfs:label "TSA-ML project" ;
+    rep:repositoryImpl [
+        rep:repositoryType "graphdb:SailRepository" ;
+        sr:sailImpl [
+            sail:sailType "graphdb:Sail" ;
+
+            graphdb:read-only "false" ;
+
+            # Inference and Validation
+            graphdb:ruleset "rdfsplus-optimized" ;
+            graphdb:disable-sameAs "true" ;
+            graphdb:check-for-inconsistencies "false" ;
+
+            # Indexing
+            graphdb:entity-id-size "32" ;
+            graphdb:enable-context-index "false" ;
+            graphdb:enablePredicateList "true" ;
+            graphdb:enable-fts-index "false" ;
+            graphdb:fts-indexes ("default" "iri") ;
+            graphdb:fts-string-literals-index "default" ;
+            graphdb:fts-iris-index "none" ;
+
+            # Queries and Updates
+            graphdb:query-timeout "0" ;
+            graphdb:throw-QueryEvaluationException-on-timeout "false" ;
+            graphdb:query-limit-results "0" ;
+
+            # Settable in the file but otherwise hidden in the UI and in the RDF4J console
+            graphdb:base-URL "http://example.org/owlim#" ;
+            graphdb:defaultNS "" ;
+            graphdb:imports "" ;
+            graphdb:repository-type "file-repository" ;
+            graphdb:storage-folder "storage" ;
+            graphdb:entity-index-size "10000000" ;
+            graphdb:in-memory-literal-properties "true" ;
+            graphdb:enable-literal-index "true" ;
+        ]
+    ].
+```
+
+Data can also be ingested using the shell script called `ingest_json_graphdb.sh` (see below).
+
+```
+Usage: TSA-ML endpoint for GraphDB import JSON-LD/RDF files.
+
+Syntax: bash ingest_json_graphdb.sh [-h|r|c|g|i|f]
+options:
+h     Help document for endpoint.
+r     Folder containing RDF files for import.
+c     Convert *.json to *.jsonld (y|n).
+g     GraphDB importrdf directory.
+i     GraphDB repository name.
+f     GraphDB repository configuration file.
+```
+
+To execute the shell script use the following command prompt.
+```
+$  bash ingest_json_graphdb.sh
+  -r ~/tsaml_graphdb_ingest/
+  -c Y
+  -g /Applications/GraphDB\ Desktop.app/Contents/app/bin/importrdf
+  -i tsa-ml
+  -f ~/tsa-ml-config.ttl
+```
+
+Data processing can take some time, as there are 2,395,151 statements. 
 
 ### Testing data
 
-The curl command accesses the endpoint which will return all triples in the graph database. Enter the details of your service between sqaure brackets.
+Data for TSA-ML can be explore using GraphDB Visual Graph. Make sure Autocomplete index is built before the graph is created.
 
-```
-$ curl -v -X POST -u [user name]:[password] --data "query=SELECT ?s ?p ?o { ?s ?p ?o . }"
-  http://[host]:[port number]/repositories/[name of the repository]/sparql
-```
+![alt text](resources/graphdb_visual_graph.png)
+
 ## Tutorials and Use Cases
 
 ### SPARQL 
