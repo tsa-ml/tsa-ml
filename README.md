@@ -44,7 +44,6 @@ This repository contains the following:
 
 * JSON-LD ingestion files for graph database (`./ingestion/`).
 * Landing web page for this work.
-* Python script for loading JSON-LD ingestion files (`ingest_json.py`).
 
 ### Setup graph database
 
@@ -76,7 +75,7 @@ $ journalctl -u graphdb
 
 ### Uploading the data in the graph database
 
-Graph database can ingest TSA-ML data using a custom developed shell script. Data files for ingestion are located in a directory on the local or remote machine which also contains the GraphDB installation and instance. A GraphDB repository needs to be setup under the name `tsa-ml`, including all of the necessary schema.org namespaces. A directory needs to be setup on the local or remote machine. This directory contains all of the JSON data files.
+Graph database can ingest TSA-ML data using a custom developed shell script. Data files for ingestion are located in a directory on the local or remote machine which also contains the GraphDB installation and instance. A GraphDB repository needs to be setup under the name `tsa-ml`, including all of the necessary Schema.org namespaces. A directory needs to be setup on the local or remote machine. This directory contains all of the JSON data files.
 
 ```
 $ sudo mkdir ~/tsaml_graphdb_ingest
@@ -138,7 +137,7 @@ Before executing the endpoint for ingesting JSON data files into GraphDB, need t
     ].
 ```
 
-Data can also be ingested using the shell script called `ingest_json_graphdb.sh` (see below).
+Data can also be ingested using the shell script called `ingest_json_graphdb.sh` (see below help documentation).
 
 ```
 Usage: TSA-ML endpoint for GraphDB import JSON-LD/RDF files.
@@ -167,7 +166,7 @@ Data processing can take some time, as there are 2,395,151 statements.
 
 ### Testing data
 
-Data for TSA-ML can be explore using GraphDB Visual Graph. Make sure Autocomplete index is built before the graph is created.
+Data for TSA-ML can be explore using GraphDB Visual graph feature. Make sure Autocomplete index is built before the graph is created.
 
 ![alt text](resources/graphdb_visual_graph.png)
 
