@@ -22,38 +22,38 @@
             }
             /* The Modal (background) */
             .modal {
-              display: none; /* Hidden by default */
-              position: fixed; /* Stay in place */
-              z-index: 1; /* Sit on top */
-              padding-top: 100px; /* Location of the box */
-              left: 0;
-              top: 0;
-              width: 100%; /* Full width */
-              height: 100%; /* Full height */
-              overflow: auto; /* Enable scroll if needed */
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
             }
             /* Modal Content */
             .modal-content {
-              background-color: #fefefe;
-              margin: auto;
-              padding: 20px;
-              border: 1px solid #888;
-              width: 80%;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
             }
             /* The Close Button */
             .close {
-              color: #aaaaaa;
-              float: right;
-              font-size: 28px;
-              font-weight: bold;
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
             }
             .close:hover,
             .close:focus {
-              color: #000;
-              text-decoration: none;
-              cursor: pointer;
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
             }
             /* Video Demo, and Image */
             .container-demo {
@@ -74,7 +74,7 @@
                 max-width: 60%;
                 height: auto;
             }
-         </style>
+        </style>
     </head>
     <body id="page-top">
         <script>
@@ -230,17 +230,17 @@
                         </a>
                     </div>
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="./doc/doc_2.pdf">
+                    	<a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Supported by Research</div>
+                                <div class="h2">Combining Micro and Macro data</div>
                                     <p class="mb-0">
-                                        700+ variables from 70+ public datasets were manually screened to support the development of the technology.
+                                        Micro consumer data is combined with population data statistics.
                                     </p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio-3.jpg" alt="..." "/>
-                        </a>
+			            </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="#!" onclick="openGitHub();">
@@ -262,7 +262,8 @@
         <section class="callout" id="schema">
             <div class="container px-4 px-lg-5 text-center">
                 <h2 class="mx-auto mb-5">TSA-ML Schema</h2>
-                <img class="responsive-schema" src="assets/img/schema.png" width="600" height="400"/>
+                <img class="responsive-schema" src="assets/img/schema.png" width="600" height="400"/><br/>
+                <img class="responsive-schema" src="assets/img/schema1.png" width="600" height="400"/>
             </div>
         </section>
         <!-- Portfolio-->
@@ -270,12 +271,24 @@
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
                     <h3 class="text-secondary mb-0">Portfolio</h3>
-                    <h2 class="mb-5">Case Study</h2>
+                    <h2 class="mb-5">Examples</h2>
                 </div>
                 <div class="row gx-4">
                     <!-- Page Content -->
                     <div class="container">
                         <!-- Project One -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/popluation1.jpg" alt="" width="700" height="570" />
+                            </div>
+                            <div class="col-md-5 showcase-text">
+                                <h3>Meta-Learning</h3>
+                                <p>Meta-regression can be used to understand the estimates of an individual who belongs to a member of a population.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <hr>
+                        <!-- Project Two -->
                         <div class="row">
                             <div class="col-md-7">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation1.png" alt="" width="500" height="370" />
@@ -287,22 +300,19 @@
                         </div>
                         <!-- /.row -->
                         <hr>
-                        <!-- Project Two -->
+                        <!-- Project Three -->
                         <div class="row">
                             <div class="col-md-7 showcase-text">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation2.png" alt="" width="500" height="370"  />
                             </div>
                             <div class="col-md-5">
                                 <h3>Cluster Analysis</h3>
-                                <p>
-                                   Cluster algorithms with Natural Language Processing (NLP) can be applied to understand patterns in different datasets on occupation 
-                                   titles held by individuals in the dataset.
-                                </p>
+                                <p>Cluster algorithms with Natural Language Processing (NLP) can be applied to understand patterns in different datasets on occupation titles held by individuals in the dataset.</p>
                             </div>
                         </div>
                         <!-- /.row -->
                         <hr>
-                        <!-- Project Three -->
+                        <!-- Project Four -->
                         <div class="row">
                             <div class="col-md-7 showcase-text">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation3.png" alt="" width="500" height="370"  />
@@ -314,7 +324,7 @@
                         </div>
                         <!-- /.row -->
                         <hr>
-                        <!-- Project Four -->
+                        <!-- Project Five -->
                         <div class="row">
                             <div class="col-md-7 showcase-text">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="./assets/img/occupation4.png" alt="" width="500" height="370"  />
