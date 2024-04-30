@@ -186,9 +186,9 @@ Below are factors that are included in the knowledge graph.
 
 ### + Age and Gender
 
-## + Social relationships (Siblings, Spouse, and Parents)
+### + Social relationships (Siblings, Spouse, and Parents)
 
-## + Ethnicity
+### + Ethnicity
 
 ## Contact
 
