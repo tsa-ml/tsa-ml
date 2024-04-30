@@ -178,11 +178,17 @@ SPARQL Queries tutorials and use cases demostrates different SPARQL queries whic
 
 ### Data Profiling 
 
-### Occupation 
+Below are factors that are included in the knowledge graph.
 
-Tutorials using Time Series on Occupation Data demostrates how TSA-ML can be used to address research questions relating to the population's key demographics over time. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+### + Occupation 
 
-Tutorials using Bivariate Analysis on Age and Occupation  demostrates how TSA-ML can be used to perform a bivariate anlysis on the population's age and occupation. This tutorial demostrates the use of different SPARQL queries, machine learning, and AI using Python. 
+### + Credential
+
+### + Age and Gender
+
+## + Social relationships (Siblings, Spouse, and Parents)
+
+## + Ethnicity
 
 ## Contact
 
