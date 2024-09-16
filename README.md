@@ -196,4 +196,4 @@ Please email your questions or comments to (d01520417@gmail.com).
 
 ## Contributing
 
-Thanks for your interest in contributing! There are many ways to get involved; start by sending us an email to email address listed above or access more information on our [official website](https://www.tsa-ml.org).
+Thanks for your interest in contributing! There are many ways to get involved; start by sending us an email to the above email address.
