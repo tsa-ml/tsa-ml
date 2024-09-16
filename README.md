@@ -1,6 +1,6 @@
 # TSA-ML
 
-TSA-ML is a data platform that integrates consumer data from diverse sources. This piece of work demostrates my interest in using machine learning and data science in the region. More information about this work is on the [official website](https://www.tsa-ml.org).
+TSA-ML is a data platform that integrates data from diverse sources. This piece of work demostrates the use of  machine learning and data science in the region.
 
 ---
 
