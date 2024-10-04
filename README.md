@@ -4,7 +4,7 @@ TSA-ML is a data platform that integrates data from diverse sources. This piece 
 
 ---
 
-![alt text](resources/pipeline_diagram.png)
+![alt text](resources/pipeline_diagram.jpg)
 
 TSA-ML is a data pipeline that...
 
