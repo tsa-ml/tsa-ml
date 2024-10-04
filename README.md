@@ -170,26 +170,6 @@ Data for TSA-ML can be explore using GraphDB Visual graph feature. Make sure Aut
 
 ![alt text](resources/graphdb_visual_graph.png)
 
-## Tutorials and Use Cases
-
-### SPARQL 
-
-SPARQL Queries tutorials and use cases demostrates different SPARQL queries which addresses research questions using the TSA-ML data platform. 
-
-### Data Profiling 
-
-Below are factors that are included in the knowledge graph.
-
-### + Occupation 
-
-### + Credential
-
-### + Age and Gender
-
-### + Social relationships (Siblings, Spouse, and Parents)
-
-### + Ethnicity
-
 ## Contact
 
 Please email your questions or comments to (d01520417@gmail.com).
